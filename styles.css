@@ -87,7 +87,8 @@ body {
   font-weight: 500;
   transition: color 0.3s ease;
   transition: var(--transition);
-  }
+  transform: translateX(0);
+}
   
   /* --- Custom Arrow SVG with "Back-Pointing" logic --- */
 .icon {
