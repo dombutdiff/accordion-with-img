@@ -87,7 +87,6 @@ body {
   font-weight: 500;
   transition: color 0.3s ease;
   transition: var(--transition);
-  transform: translateX(0);
 }
   
   /* --- Custom Arrow SVG with "Back-Pointing" logic --- */
@@ -172,9 +171,16 @@ body {
 
 
 
+/* --- Mobile Fixes --- */
 @media (max-width: 740px) {
+  /* Reduce header size for mobile */
+  .accordion-header h2 {
+    font-size: 24px;
+  }
+
+  /* Fix image height - 'auto' allows it to scale proportionally */
   .accordion-content img {
-    width: 100%;
-    height: 100%;
+    height: 200px; /* Or use 'auto' */
+    object-fit: cover;
   }
 }
