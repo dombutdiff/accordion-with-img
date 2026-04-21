@@ -6,9 +6,9 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* ::-webkit-scrollbar {
@@ -16,40 +16,40 @@
 } */
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff;
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-    /* height: 100vh; */
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  /* height: 100vh; */
 }
 
 /* --- Main Container (Column Flex Direction) --- */
 .services-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    max-width: 1040px;
-    /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1040px;
+  /* border: 1px solid black; */
 }
 
 .services-label {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 40px;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 40px;
 }
 
 .services-title {
-    font-size: 16px;
-    margin-bottom: 30px;
-    font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 30px;
+  font-weight: 400;
 }
 
 /* --- Accordion Item & The "Line Between" --- */
 .accordion-item {
-    border-bottom: 1px solid #e0e0e0;
-    overflow: hidden;
+  border-bottom: 1px solid #e0e0e0;
+  overflow: hidden;
 }
 
 /* Remove border from last item just like the image */
@@ -59,17 +59,17 @@ body {
 
 /* --- Button/Header (Space Between Title and Arrow) --- */
 .accordion-header {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 0;
-    outline: none;
-    overflow: visible;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  outline: none;
+  overflow: visible;
 }
 
 .accordion-header:hover h2 {
@@ -83,10 +83,10 @@ body {
 
 /* Title text styling - slightly larger than content */
 .accordion-header h2 {
-    font-size: 32px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    transition: var(--transition);
+  font-size: 32px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  transition: var(--transition);
   }
   
   /* --- Custom Arrow SVG with "Back-Pointing" logic --- */
@@ -100,27 +100,27 @@ body {
 
 /* --- Content Area - Set up for Height Animation --- */
 .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: var(--transition);
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--transition);
 }
 
 /* --- Inner Content Styling (Padding/List style) --- */
 .accordion-body {
-    list-style: none;
-    padding-bottom: 25px; /* Spacing below last item when open */
+  list-style: none;
+  padding-bottom: 25px; /* Spacing below last item when open */
 }
 
 .accordion-body li {
-    font-size: 20px;
-    margin-bottom: 15px;
-    line-height: 1.4;
-    color: #333;
-    transform: translateY(10px);
-    opacity: 0;
-    /* Delay the text fade-in until the container has started moving */
-    transition: all 0.4s ease;
-    /* padding-left: 16px; */
+  font-size: 20px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  color: #333;
+  transform: translateY(10px);
+  opacity: 0;
+  /* Delay the text fade-in until the container has started moving */
+  transition: all 0.4s ease;
+  /* padding-left: 16px; */
 }
 
 .accordion-content img {
@@ -128,6 +128,9 @@ body {
   height: 400px;
   padding-bottom: 16px;
   object-fit: cover;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
 /* Keep last item clean */
@@ -139,19 +142,24 @@ body {
 
 /* Rule to open the content */
 .accordion-item.active .accordion-content {
-    max-height: 500px; /* Arbitrary high value for height transition to 'auto' */
-    opacity: 1;
-    pointer-events: all;
+  max-height: 500px; /* Arbitrary high value for height transition to 'auto' */
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* Rule to flip arrow UP when active */
 .accordion-item.active .icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .accordion-item.active .accordion-body li {
-    transform: translateY(0);
-    opacity: 1;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.accordion-item.active img {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* Staggered delay for each list item for the "Fade" effect */
@@ -159,6 +167,7 @@ body {
 .accordion-item.active .accordion-body li:nth-child(2) { transition-delay: 0.2s; }
 .accordion-item.active .accordion-body li:nth-child(3) { transition-delay: 0.3s; }
 .accordion-item.active .accordion-body li:nth-child(4) { transition-delay: 0.4s; }
+.accordion-item.active img {transition-delay: 0.5s; }
 
 
 
